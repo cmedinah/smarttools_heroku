@@ -1,1 +1,1 @@
-worker: node cron.js
+web: node cron.js
