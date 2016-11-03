@@ -33,7 +33,13 @@ let environmentVariables = () =>
 				{
 					accessKeyId : process.env.SES_ACCESKEYID, 
             		secretAccessKey : process.env.SES_SECRETACCESSKEY
-				}, 
+				},
+			sendgrid :
+			{
+                                sendGridUser : process.env.SENDGRID_USERNAME,
+	                        sendGridKey : process.env.SENDGRID_PASSWORD
+
+			},
 				userDB : process.env.USER_MONGODB
 			};
 };

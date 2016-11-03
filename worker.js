@@ -1,7 +1,9 @@
 "use strict";
+
 const db   	            = require('./modules/database'),
+      sgTransport = require('nodemailer-sendgrid-transport'),
       nodemailer	    = require('nodemailer'),
-      ses               = require('nodemailer-ses-transport'),
+//      ses               = require('nodemailer-ses-transport'),
       fs                = require('fs'),
       config 	 	    = JSON.parse(fs.readFileSync('./config.json', 'utf8')), 
       ffmpeg            = require('fluent-ffmpeg'), 
@@ -19,11 +21,20 @@ const db   	            = require('./modules/database'),
                                     secretAccessKey : environmentVars.secretAccessKey
                                 }
                         }),
-     transporter         = nodemailer.createTransport(ses
+  /*   transporter         = nodemailer.createTransport(ses
 	  				    ({
                                 accessKeyId		: environmentVars.ses.accessKeyId,
                                 secretAccessKey	: environmentVars.ses.secretAccessKey
                         }));
+*/
+options = {
+    auth: {
+        api_user: environmentVars.sendgrid.sendGridUser,
+        api_key: environmentVars.sendgrid.sendGridKey
+    }
+},
+ transporter         = nodemailer.createTransport(sgTransport(options));
+
     aws.config.update
     ({
         accessKeyId: environmentVars.accessKeyId, 
