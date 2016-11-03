@@ -1,10 +1,10 @@
 "use strict";
 var cron = require('node-cron'), 
-	  email_sendgrid = require('./email_sendgrid');
+	  worker = require('./worker2');
     
 //Se invoca cada minuto...
 cron.schedule('* * * * *', function()
 {
     console.log('running a task every minute');
-    email_sendgrid.runWorker();
+    worker.runWorker();
 });
