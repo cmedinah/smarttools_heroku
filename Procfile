@@ -1,1 +1,1 @@
-worker: node mailer_cron.js
+worker: node mail_cron.js
