@@ -51,9 +51,9 @@ options = {
     {
 	 let mailOptions = {
                                 from: `"SmartTools" <${config.aws.ses.sendEmail}>`,
-                                to: datosEmail.email,
-                                subject: `${datosEmail.titulo_video} ha sido Convertido ✔`,
-                                html: mensaje
+                                to: 'cameolgui21@gmail.com',
+                                subject: `email de prueba se ha sido Convertido ✔`,
+                                html: 'estamos probandooooooooooooooooooooooooooooooooooo xD xD xD'
                         };
         //Enviar el e-mail...
         transporter.sendMail(mailOptions, function(error, info)
@@ -349,6 +349,7 @@ options = {
                                 </tr>
                             </table></font></center></body></html>`;
         let mailOptions = {
+
                                 from: `"SmartTools" <${config.aws.ses.sendEmail}>`,
                                 to: datosEmail.email, 
                                 subject: `${datosEmail.titulo_video} ha sido Convertido ✔`, 
