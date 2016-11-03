@@ -367,7 +367,8 @@ const db   	            = require('./modules/database'),
             duration       = 0;
         //.setFfmpegPath("/usr/local/bin/ffmpeg/ffmpeg")
         let command = new ffmpeg({ source: videoOriginal, nolog: true })
-                    .screenshots({
+	    .setFfmpegPath("/usr/local/bin/ffmpeg/ffmpeg")        
+            .screenshots({
                                         filename: `${datosVideo.token_archivo}_thumbnail.png`,
                                         count: 1,
                                         folder: `${baseUbicaVideo}`
